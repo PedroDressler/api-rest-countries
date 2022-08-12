@@ -1,23 +1,22 @@
-<%- contentFor('body') %>
-<div class="jumbotron text-center">
-    <table>
-        <thead>
+<div class="jumbotron text-left">
+    <table class="table table-dark">
+        <thead class="thead-dark">
             <tr>
-                <th>Name</th>
-                <th>Flag</th>
-                <th>Population</th>
-                <th>Language</th>
+                <th scope="col">Bandeira</th>
+                <th scope="col">Nome do país</th>
+                <th scope="col">População</th>
+                <th scope="col">Idioma</th>
             </tr>
         </thead>
         <tbody>
-            <% for ( var pais in paises ) {%>
+            <% for(var i = 0; i < countries.length; i++) { %>
                 <tr>
-                    <td><% pais.name %></td>
-                    <td><img src="<% pais.flag %>"></td>
-                    <td>Population</td>
-                    <td>Language</td>
+                    <td><img height="25" width="50" src="<%= countries[i].flag %>"></td>
+                    <td><%= countries[i].nome %></td>
+                    <td><%= countries[i].populacao.toLocaleString() %></td>
+                    <td><%= countries[i].lingua %></td>
                 </tr>
-            <% }%>
+            <% } %>
         </tbody>
       </table>
 </div>

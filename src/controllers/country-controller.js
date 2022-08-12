@@ -1,7 +1,7 @@
 import returnCountryBasedOnQuery from '../models/country-model.js';
 
-async function getCountries(parametro){
-    const data = await returnCountryBasedOnQuery(parametro);
+async function getCountries(regiao) {
+    const data = await returnCountryBasedOnQuery(regiao);
     return data;
 }
 
